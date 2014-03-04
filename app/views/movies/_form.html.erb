@@ -1,0 +1,41 @@
+<%= form_for @movie do |m| %>
+  <% if @movie.errors.any? %>
+  <div id="error_explanation">
+  	<h2><%= pluralize(@movie.errors.count, "error") %> prohibeted
+  		this movie from being saved:</h2>
+  	<ul>
+  	<% @movie.errors.full_messages.each do |msg| %>
+  	  <li><%= msg %></li>
+  	<% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+	<%= m.label "Название" %>
+	<%= m.text_field :title %>
+  </p>
+
+  <p>
+	<%= m.label "Описание фильма" %>
+	<%= m.text_area :description %>
+  </p>
+
+  <p>
+	<%= m.label "Год выпуска фильма" %>
+	<%= m.text_field :year %>
+  </p>
+
+  <p>
+	<%= m.label "Жанр" %>
+	<%= m.text_field :genre %>
+  </p>
+
+  <p>
+	<%= m.label "Ссылка на источник" %>
+	<%= m.text_field :url %>
+  </p>
+
+  <p>
+  <%= m.submit "Создать фильм", class: "btn btn-large btn-primary" %>
+  </p>
+<% end %>

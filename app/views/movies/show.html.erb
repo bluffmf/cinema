@@ -1,0 +1,31 @@
+<h1>Новый фильм <%= @movie.title %> </h1>
+ 
+<p>
+  <strong>Описание:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Год выпуска:</strong>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <strong>Жанр:</strong>
+  <%= @movie.genre %>
+</p>
+
+<p>
+  <strong>Ссылка на источник:</strong>
+  <%= @movie.url %>
+</p>
+
+
+<h2>Комментарий: </h2>
+<%= render @movie.comments %>
+
+<h2>Добавте свой комментарий</h2>
+<%= render "comments/form" %>
+
+<%= link_to "Назад", movies_path %> |
+<%= link_to "Редактировать", edit_movie_path(@movie) %>

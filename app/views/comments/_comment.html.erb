@@ -1,0 +1,13 @@
+<p>
+  <strong>Коментатор: </strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Коментарий: </strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to "Удалить комментарий", [comment.movie, comment], method: :delete, data: { confirm: 'Вы уверенны?'} %>
+</p>

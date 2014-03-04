@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="gravatar">
+    <h1>Регистрация</h1>
+    
+  	<%= form_for(@user) do |f| %>
+  	  <%= render 'shared/error_messages' %>
+
+  	  <%= f.label "Имя" %>
+      <%= f.text_field :name %>
+
+      <%= f.label "Почтовый ящик" %>
+      <%= f.text_field :email %>
+
+      <%= f.label "Пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Подтверждение" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Создать аккаунт", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

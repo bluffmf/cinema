@@ -1,0 +1,26 @@
+<h1>Все фильмы</h1>
+<%= link_to "Добавить фильм", new_movie_path %>
+<br>
+<br>
+<table>
+	<tr>
+		<th>Название</th>
+		<th>Год выпуска</th>
+		<th>Описание</th>
+		
+	</tr>
+
+	<% @movies.each do |movie| %>
+	  <tr>
+	  	<td><%= movie.title %></td>
+	  	<td><%= movie.year %></td>
+	  	<td><%= movie.description %></td>
+	  	<td>..............</td>
+	  	<td><%= link_to "Посмотреть", movie %></td>
+	  	<td><%= link_to "Редактировать", edit_movie_path(movie) %></td>
+	  	<td><%= link_to "Удалить", movie_path(movie), method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+	  </tr>
+	<% end %>
+
+	
+</table>
