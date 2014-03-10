@@ -35,7 +35,7 @@ group :doc do
 end
 
 group :development do
-  gem "capistrano"
+  gem 'capistrano', '~> 2.15'
   gem "rvm-capistrano"
 end
 
