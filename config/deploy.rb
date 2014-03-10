@@ -14,6 +14,8 @@ set :scm, "git"
 set :repository, "git@github.com:bluffmf/#{application}.git"
 set :branch, "master"
 
+set :rvm_bin_path, "$HOME/bin"
+
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
