@@ -48,4 +48,4 @@ gem 'unicorn'
 gem 'therubyracer'
 gem 'execjs'
 
-gem 'pg'
+gem 'pg', '0.13.2'
