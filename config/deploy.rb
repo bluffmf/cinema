@@ -14,7 +14,8 @@ set :scm, "git"
 set :repository, "git@github.com:bluffmf/#{application}.git"
 set :branch, "master"
 
-set :rvm_bin_path, "$HOME/bin"
+#set :rvm_bin_path, "$HOME/bin"
+set :default_shell, "/bin/bash -l"
 
 
 default_run_options[:pty] = true
