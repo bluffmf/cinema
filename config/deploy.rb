@@ -17,6 +17,8 @@ set :branch, "master"
 #set :rvm_bin_path, "$HOME/bin"
 set :default_shell, "/bin/bash -l"
 
+#set :rvm_ruby_string, '1.9.2@samohodom'
+
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
