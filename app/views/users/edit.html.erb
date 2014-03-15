@@ -1,11 +1,11 @@
 <div class="row">
   <div class="gravatar">
-    <h1>Регистрация</h1>
+    <h1>Редактирование пользователя</h1>
     
   	<%= form_for(@user) do |f| %>
   	  <%= render 'shared/error_messages', :object => f.object %>
 
-  	  <%= f.label "Имя" %>
+  	  <%= f.label :name %>
       <%= f.text_field :name %>
 
       <%= f.label "Почтовый ящик" %>
@@ -17,8 +17,11 @@
       <%= f.label :password_confirmation, "Подтверждение" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Создать аккаунт", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Редактировать аккаунт", class: "btn btn-large btn-primary" %>
+      <%= link_to "Назад", users_path, class: "btn btn-large btn-primary" %>
 
     <% end %>
+
+
   </div>
 </div>
