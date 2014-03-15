@@ -1,0 +1,17 @@
+<h1 class="gravatar">Вход</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="gravatar">
+  	<%= f.label :email %><br />
+  	<%= f.text_field :email %>
+  </div>
+  <div class="gravatar">
+  	<%= f.label :password %><br />
+  	<%= f.password_field :password %>
+  </div>
+  <div class="gravatar">
+  	<%= f.submit "Войти", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+
+<p>Новый пользователь? <%= link_to "Зарегистрируйся сейчас!", signup_path %></p>
