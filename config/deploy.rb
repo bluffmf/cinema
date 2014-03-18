@@ -12,7 +12,7 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:bluffmf/#{application}.git"
-set :branch, "master"
+set :branch, "sign-in-out"
 
 #set :rvm_bin_path, "$HOME/bin"
 set :default_shell, "/bin/bash -l"
@@ -49,11 +49,11 @@ namespace :deploy do
 
     desc "Make sure local git is in sync with remote."
     task :check_revision, roles: :web do
-        unless `git rev-parse HEAD` == `git rev-parse origin/master`
-            puts "WARNING: HEAD is not the same as origin/master"
-            puts "Run `git push` to sync changes."
-            exit
-        end
+        #unless `git rev-parse HEAD` == `git rev-parse origin/master`
+        #    puts "WARNING: HEAD is not the same as origin/master"
+        #    puts "Run `git push` to sync changes."
+        #    exit
+        #end
     end
     before "deploy", "deploy:check_revision"
 end
