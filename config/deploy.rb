@@ -12,12 +12,12 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:bluffmf/#{application}.git"
-set :branch, "sign-in-out"
+set :branch, "master"
 
 #set :rvm_bin_path, "$HOME/bin"
 set :default_shell, "/bin/bash -l"
 
-set :rvm_ruby_string, '1.9.3' 
+set :rvm_ruby_string, '2.0.0-p451' 
 
 
 default_run_options[:pty] = true
