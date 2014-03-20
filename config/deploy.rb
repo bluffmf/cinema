@@ -15,9 +15,10 @@ set :repository, "git@github.com:bluffmf/#{application}.git"
 set :branch, "master"
 
 #set :rvm_bin_path, "$HOME/bin"
-set :default_shell, "/bin/bash -l"
+set :rvm_path, "$HOME/.rvm"
+#set :default_shell, "/bin/bash -l"
 
-set :rvm_ruby_string, '2.0.0-p451' 
+set :rvm_ruby_string, 'ruby-2.0.0-p451@cinema' 
 
 
 default_run_options[:pty] = true
