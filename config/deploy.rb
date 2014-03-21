@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "123.123.123.123", :web, :app, :db, primary: true
+server "192.168.1.5", :web, :app, :db, primary: true
 
 set :application, "cinema"
 set :user, "bluffmf"
