@@ -65,7 +65,7 @@ namespace :deploy do
         #    exit
         #end
     end
-    after "deploy:check_revision", "deploy:migrate"
+    after "deploy:symlink_config", "deploy:migrate"
 
     before "deploy", "deploy:check_revision"
 end
