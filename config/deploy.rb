@@ -58,7 +58,7 @@ namespace :deploy do
     end
 
     task :migrate, roles: :db do
-      run "bundle exec rake db:migrate RAILS_ENV=production"
+      run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
         #unless `git rev-parse HEAD` == `git rev-parse origin/master`
         #    puts "WARNING: HEAD is not the same as origin/master"
         #    puts "Run `git push` to sync changes."
