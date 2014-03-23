@@ -49,3 +49,5 @@ gem 'therubyracer'
 gem 'execjs'
 
 gem 'pg', '0.13.2'
+
+gem 'geocoder'

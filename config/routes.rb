@@ -1,5 +1,7 @@
 Cinema::Application.routes.draw do
   
+  resources :locations
+
   get "sessions/new"
   get "frontend/index"
 
