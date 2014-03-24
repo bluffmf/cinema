@@ -43,10 +43,18 @@ namespace :deploy do
     end
     after "deploy:setup", "deploy:setup_config"
 
+
+    task :migrate, roles: :db do
+      run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
+    end
+    after "deploy:finalize_update", "deploy:migrate"
+    
+
     task :symlink_config, roles: :app do
         run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     end
-    after "deploy:finalize_update", "deploy:symlink_config"
+    after "deploy:migrate", "deploy:symlink_config"
+
 
     desc "Make sure local git is in sync with remote."
     task :check_revision, roles: :web do
@@ -57,15 +65,7 @@ namespace :deploy do
         #end
     end
 
-    task :migrate, roles: :db do
-      run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
-        #unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        #    puts "WARNING: HEAD is not the same as origin/master"
-        #    puts "Run `git push` to sync changes."
-        #    exit
-        #end
-    end
-    after "deploy:symlink_config", "deploy:migrate"
+    
 
     before "deploy", "deploy:check_revision"
 end
