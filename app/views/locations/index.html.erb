@@ -1,16 +1,16 @@
-<h1>Listing locations</h1>
+<h1>Список локаций</h1>
 
 <%= form_tag locations_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
+    <%= submit_tag "Поиск ближайших локаций", :name => nil %>
   </p>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <th>Address</th>
+      <th>Адрес</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th></th>
@@ -25,9 +25,9 @@
         <td><%= location.address %></td>
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', location %></td>
+        <td><%= link_to 'Редактировать', edit_location_path(location) %></td>
+        <td><%= link_to 'Удалить', location, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Location', new_location_path %>
+<%= link_to 'Новая локация', new_location_path %>
