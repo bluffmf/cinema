@@ -56,3 +56,5 @@ gem 'therubyracer', :platforms => :ruby
 gem 'pg'
 
 gem 'geocoder'
+
+gem 'minitest', '= 4.7.5'
