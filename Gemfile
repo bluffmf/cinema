@@ -54,3 +54,5 @@ gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 
 gem 'pg'
+
+gem 'geocoder'
